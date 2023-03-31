@@ -17,7 +17,7 @@ const CourseCard = ({ course, isAdmin }: Props) => {
   return (
     <>
       <Link href={href}>
-        <a className='w-full border rounded-lg transition shadow-sm hover:shadow-md cursor-pointer'>
+        <a className='w-full transition shadow-sm hover:shadow-md cursor-pointer rounded-sm'>
           {course.lessons[0]?.video?.publicPlaybackId && (
             <Image
               className="w-full"
@@ -28,13 +28,13 @@ const CourseCard = ({ course, isAdmin }: Props) => {
             />
           )}
 
-          <div className="p-8">
-            {!course.published && (<span className="bg-slate-200 text-slate-700 rounded-full text-xs py-1 px-3 mb-2 inline-block">Draft</span>)}
+          <div className="p-8 bg-gray-600">
+            {!course.published && (<span className="bg-orange-300 text-slate-900 rounded-full text-xs py-1 px-3 mb-2 inline-block">Draft</span>)}
 
             <Heading as="h3">
               {course.name}
             </Heading>
-            <p className="text-slate-700">
+            <p className="text-slate-100">
               {course.description}
             </p>
           </div>

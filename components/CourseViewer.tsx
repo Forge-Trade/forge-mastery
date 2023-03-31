@@ -57,7 +57,7 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
   }
 
   return (
-    <div className='px-5 grid lg:grid-cols-[70%_30%]'>
+    <div className='px-10 grid gap-10 lg:grid-cols-[65%_35%]'>
       <div>
         {playbackId && videoReady ? (
           <MuxPlayer
@@ -80,7 +80,7 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
         <p className='text-slate-600 text-lg'>{activeLesson.description}</p>
       </div>
 
-      <div>
+      <div className='ml-1'>
         {course.lessons.map(lesson => (
           <a
             onClick={() => setActiveLesson(lesson)}
@@ -100,13 +100,13 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
               <Image
                 src={`https://image.mux.com/${lesson.video.publicPlaybackId}/thumbnail.jpg?width=640`}
                 alt={`Video thumbnail preview for ${lesson.name}`}
-                width={106}
-                height={60}
+                width={320}
+                height={240}
               />
             )}
             <div className='overflow-hidden'>
               <h2>
-                <span className='font-semibold font-cal text-lg text-slate-800'>{lesson.name}</span>
+                <span className='font-semibold text-lg text-slate-800'>{lesson.name}</span>
                 {lesson.video?.duration && (
                   <span className='text-sm italic text-slate-600 truncate'> • {formatDuration(Math.round(lesson.video.duration))}</span>
                 )}

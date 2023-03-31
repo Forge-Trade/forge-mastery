@@ -9,7 +9,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      cal: ["Cal Sans", "Inter var", "sans-serif"],
+      cal: ["Inter", "Inter var", "sans-serif"],
     },
     extend: {
       colors: {
@@ -32,13 +32,13 @@ module.exports = {
         DEFAULT: {
           css: {
             h1: {
-              fontFamily: "Cal Sans",
+              fontFamily: "Inter",
             },
             h2: {
-              fontFamily: "Cal Sans",
+              fontFamily: "Inter",
             },
             h3: {
-              fontFamily: "Cal Sans",
+              fontFamily: "Inter",
             },
             "blockquote p:first-of-type::before": { content: "none" },
             "blockquote p:first-of-type::after": { content: "none" },
@@ -66,5 +66,15 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
+    require("daisyui")
   ],
+  daisyui: {
+    themes: [{
+      holloween: {
+        primary: "#e34a30",
+        ...require("daisyui/src/colors/themes")["[data-theme=halloween]"],
+      },
+      }]
+
+  },
 }
