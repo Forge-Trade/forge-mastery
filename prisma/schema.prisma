@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider             = "mysql"
-  url                  = "mysql://lx4utczssnfoebtdw8a9:pscale_pw_8zjYk2MNaXJ7KoXVC4dyGNMwketUpTAjrzqg8Ynxeey@aws.connect.psdb.cloud/video-course-starter-kit?sslaccept=strict"
+  url                  = "mysql://zslyourc0xaevg47c6g8:pscale_pw_lHLwrRw6guAuUcv2eAwDY6dhzdd7nX7NAamynz0MN4r@aws.connect.psdb.cloud/video-course-starter-kit?sslaccept=strict"
   referentialIntegrity = "prisma"
 }
 
@@ -47,6 +47,8 @@ model User {
   courses          Course[]
   videos           Video[]
   completedLessons UserLessonProgress[]
+
+  @@unique([id, name])
 }
 
 model VerificationToken {
@@ -64,7 +66,8 @@ model Course {
   slug        String
   lessons     Lesson[]
   author      User     @relation(fields: [authorId], references: [id])
-  authorId    String
+  authorId    String   
+  authorName  String   @default("Evmos DAO")
   published   Boolean  @default(false)
 }
 
@@ -74,8 +77,11 @@ model Lesson {
   description    String
   slug           String
   course         Course               @relation(fields: [courseId], references: [id])
-  courseId       Int
+  courseId       Int                  
+  courseAuthor   String?              @default("Evmos DAO")
+  lessonType     String               @default("video")
   video          Video?
+  textURL        String?
   usersCompleted UserLessonProgress[]
 }
 

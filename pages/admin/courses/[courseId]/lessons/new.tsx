@@ -23,6 +23,8 @@ import SubmitInput from 'components/forms/SubmitInput';
 type Inputs = {
   name: string;
   description: string;
+  lessonType: string;
+  textURL: string;
   uploadId: string;
   courseId: string;
 };
@@ -71,7 +73,8 @@ const AdminNewLesson: NextPage<AdminNewLessonPageProps> = ({ uploadUrl, uploadId
         <form className='flex flex-col max-w-xl' onSubmit={methods.handleSubmit(onSubmit)}>
           <TextInput label='Name' name='name' options={{ required: true }} />
           <TextAreaInput label='Description' name='description' options={{ required: true }} />
-
+          <TextInput label='Lesson Text URL' name='text' options={{ required: false }} />
+          <TextInput label='Lesson Type' name='lessonType' options={{ required: false }} />
           <Field>
             <MuxUploader
               endpoint={uploadUrl}
@@ -90,7 +93,6 @@ const AdminNewLesson: NextPage<AdminNewLessonPageProps> = ({ uploadUrl, uploadId
             type="submit"
             className='bg-blue-500 text-white p-4 disabled:bg-slate-50 disabled:text-gray-400 cursor-pointer disabled:cursor-not-allowed w-fit'
             value='Create lesson'
-            disabled={!isVideoUploaded}
           />
         </form>
       </FormProvider>

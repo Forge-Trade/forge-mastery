@@ -11,6 +11,7 @@ import Link from 'next/link'
 import type { NextPageWithLayout } from 'pages/_app'
 import CourseViewer from 'components/CourseViewer'
 import Nav from 'components/Nav'
+import Footer from 'components/Footer'
 import Banner from 'components/Banner'
 
 type VideoWithPlaceholder = Video & { placeholder?: string }
@@ -30,15 +31,6 @@ const ViewCourse: NextPageWithLayout<ViewCoursePageProps> = ({ course, completed
 
   return (
     <>
-      {!session && (
-        <Banner>
-          <p className='text-center'>
-            <Link href='/api/auth/signin'>
-              <a className='underline'>Sign in</a>
-            </Link> to track your progress &rarr;{' '}
-          </p>
-        </Banner>
-      )}
       <CourseViewer course={course} lessonProgress={lessonProgress} setLessonProgress={setLessonProgress} />
     </>
   )
@@ -49,6 +41,7 @@ ViewCourse.getLayout = function getLayout(page: ReactElement) {
     <>
       <Nav />
       {page}
+      <Footer />
     </>
   )
 }
