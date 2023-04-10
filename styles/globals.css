@@ -26,6 +26,12 @@
 .doc-img{
     margin-top: 40px !important;
 }
+.nx-flex .active > a {
+    background-color: #29292a !important;
+}
+.nextra-code-block > pre {
+    background-color: #29292a !important;
+}
 @media screen and (max-width: 500px) {
 
     a.playlist-item{
