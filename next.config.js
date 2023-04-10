@@ -7,6 +7,6 @@ module.exports = withNextra({
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['image.mux.com', 'testnet.forge.trade'],
+    domains: ['image.mux.com', 'testnet.forge.trade', 'docs.forge.trade'],
   },
 })
