@@ -38,9 +38,9 @@ return (
       <a className="hidden md:flex ml-3 normal-case text-2xl font-bold mr-1">IRON<span className="font-medium">WORKS</span></a>
       <div className="hidden lg:flex divider divider-horizontal"></div>
       <ul className="hidden lg:flex menu menu-horizontal rounded-md">
-        <li><a>Docs</a></li>
+        <li><Link href="/docs">Docs</Link></li>
         <li><a>Tools & Resources</a></li>
-        <li><a>Partnerships & Grants</a></li>
+        <li><Link href="/docs/partnership-grants">Partnerships & Grants</Link></li>
         <li><a>Project Listing</a></li>
       </ul>
     </div>

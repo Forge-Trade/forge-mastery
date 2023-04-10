@@ -23,6 +23,9 @@
     text-align: center;
     align-self: center;
 }
+.doc-img{
+    margin-top: 40px !important;
+}
 @media screen and (max-width: 500px) {
 
     a.playlist-item{
@@ -48,6 +51,20 @@
         max-height: 100vh;
         overflow-y: scroll;
     
+    }
+    div[dir="ltr"] {
+        margin: -1.5rem -2.5rem;
+        background-color: #141413;
+    }
+    .nextra-sidebar-container > div:last-child{
+        display: none;
+    }
+    .nextra-toc > .nextra-scrollbar > div.nx-mt-8 {
+        display: none;
+    }
+    .docsfooter{
+        height: 1px !important;
+        margin-bottom: -2.5rem !important;
     }
   }
   mux-player {
