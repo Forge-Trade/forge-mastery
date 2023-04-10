@@ -1,8 +1,5 @@
 {
-  "index": "Tokenomics",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
-    "type": "page"
-  }
+  "index": "Sustainable Future",
+  "incentives": "Incentive Programs",
+  "vaults": "Vaults"
 }

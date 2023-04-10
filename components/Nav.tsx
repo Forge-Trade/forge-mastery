@@ -39,9 +39,9 @@ return (
       <div className="hidden lg:flex divider divider-horizontal"></div>
       <ul className="hidden lg:flex menu menu-horizontal rounded-md">
         <li><Link href="/docs">Docs</Link></li>
-        <li><a>Tools & Resources</a></li>
+        <li><Link href="/docs/tools-resources">Tools & Resources</Link></li>
         <li><Link href="/docs/partnership-grants">Partnerships & Grants</Link></li>
-        <li><a>Project Listing</a></li>
+        <li><Link href="/docs/listing">Project Listing</Link></li>
       </ul>
     </div>
 
