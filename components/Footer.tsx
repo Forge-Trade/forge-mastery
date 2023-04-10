@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 const Footer = () => (
   <footer className="footer items-center mt-10 p-10 bg-[#0d0e0e] text-slate-200">
   <div className="items-center grid-flow-col">
