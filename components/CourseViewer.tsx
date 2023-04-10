@@ -151,7 +151,7 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
               hoverSrc={`https://image.mux.com/${lesson.video.publicPlaybackId}/animated.webp?width=314&height=178`} 
               alt={`Video thumbnail preview for ${lesson.name}`}
               width={314} height={178} 
-              duration={lesson.video.duration}
+              duration={lesson.video.duration || 1}
               />
                   </>
             )}

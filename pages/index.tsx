@@ -5,7 +5,7 @@ const Index = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('/courses/1-basic-training');
+    router.push('/all');
   }, []);
 
   return null;
