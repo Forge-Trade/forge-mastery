@@ -25,9 +25,9 @@ return (
         </label>
         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         <li><Link href="/courses/1-basic-training/">Bootcamp</Link></li>
-        <li><Link href="/docs/tools-resources">Tools & Resources</Link></li>
-        <li><Link href="/docs/partnership-grants">Partnerships & Grants</Link></li>
-        <li><Link href="/docs/listing">Project Listing</Link></li>
+        <li><Link href="/resources/tools-resources">Tools & Resources</Link></li>
+        <li><Link href="/resources/partnership-grants">Partnerships & Grants</Link></li>
+        <li><Link href="/resources/listing">Project Listing</Link></li>
         </ul>
       </div>
       <Link href="/" passHref>
@@ -42,9 +42,9 @@ return (
         <span className="indicator-item indicator-start badge badge-primary rounded-full p-1 top-2 left-2 leading-3 text-[0.7rem] z-0">⚡</span> 
           <Link href="/courses/1-basic-training">Bootcamp</Link>
           </li>
-        <li><Link href="/docs/tools-resources">Tools & Resources</Link></li>
-        <li><Link href="/docs/partnership-grants">Partnerships & Grants</Link></li>
-        <li><Link href="/docs/listing">Project Listing</Link></li>
+        <li><Link href="/resources/tools-resources">Tools & Resources</Link></li>
+        <li><Link href="/resources/partnership-grants">Partnerships & Grants</Link></li>
+        <li><Link href="/resources/listing">Project Listing</Link></li>
       </ul>
     </div>
 
