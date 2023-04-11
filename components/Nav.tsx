@@ -49,7 +49,7 @@ return (
     </div>
 
     <div className="navbar-end">
-      <a className="btn btn-sm btn-header bg-[#e04a32] hover:bg-[#b33825] px-3 text-sm rounded-md font-semibold">🔥 ENTER THE FORGE →</a>
+      <a className="btn btn-sm btn-header bg-[#e04a32] hover:bg-[#b33825] px-3 text-sm rounded-md font-semibold" href="https://app.forge.trade" target="_blank" rel="noopener">🔥 ENTER THE FORGE →</a>
     </div>
   </div>
 
