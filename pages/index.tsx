@@ -5,7 +5,7 @@ const Index = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('/all');
+    router.push('/resources');
   }, []);
 
   return null;

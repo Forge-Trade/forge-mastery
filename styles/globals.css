@@ -32,6 +32,10 @@
 .nextra-code-block > pre {
     background-color: #29292a !important;
 }
+.animate-spin {
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
 @media screen and (max-width: 500px) {
 
     a.playlist-item{

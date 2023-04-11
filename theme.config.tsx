@@ -32,8 +32,7 @@ const config: DocsThemeConfig = {
   },
   nextThemes: {
     defaultTheme: 'dark',
-    forcedTheme: 'dark',
-    enableSystem: false
+    forcedTheme: 'dark'
   }
 }
 
