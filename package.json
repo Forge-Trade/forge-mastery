@@ -1,13 +1,12 @@
 {
-  "name": "forge-video-tuts",
+  "name": "forge-mastery",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "npx prisma generate && next dev",
     "build": "npx prisma generate && npx prisma db push && next build",
     "start": "next start",
-    "lint": "next lint",
-    "db:proxy": "pscale connect video-course-starter-kit main --port 3309"
+    "lint": "next lint"
   },
   "dependencies": {
     "@mux/blurhash": "^0.1.2",

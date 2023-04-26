@@ -31,7 +31,14 @@ yarn-error.log*
 # vercel
 .vercel
 
+# vscode
+.vscode
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 prisma/schema.prisma
+/prisma/schema.prisma
+.config/
+.local/state/gh/state.yml
+

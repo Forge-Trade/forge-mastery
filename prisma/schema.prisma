@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider             = "mysql"
-  url                  = "mysql://zslyourc0xaevg47c6g8:pscale_pw_lHLwrRw6guAuUcv2eAwDY6dhzdd7nX7NAamynz0MN4r@aws.connect.psdb.cloud/video-course-starter-kit?sslaccept=strict"
+  url                  = env("DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 

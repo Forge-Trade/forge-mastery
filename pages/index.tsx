@@ -5,7 +5,8 @@ const Index = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('/all');
+    router.push('/resources');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return null;
