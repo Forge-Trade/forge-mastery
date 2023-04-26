@@ -38,3 +38,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 prisma/schema.prisma
+/prisma/schema.prisma
+.config/
+.local/state/gh/state.yml
+
