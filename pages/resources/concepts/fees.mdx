@@ -4,6 +4,13 @@ title: Fees
 sidebar_position: 2
 ---
 
+
+## Rewards for Liquidity Providers
+
+The fees due to your liquidity position will be denominated in both tokens of the given pair. In any of the above examples, after swapping stEVMOS for EVMOS, or EVMOS for stEVMOS, a small amount of both EVMOS and stEVMOS will be due to your account as liquidity provisioning rewards.
+
+Approaches to concentration when setting range orders are up to the user. Selecting a wider range may generate more fees if there is price churn within your range, at the cost of increasing the risk of having your order unfilled if the spot price reverses before completing your full range.
+
 ## Swap Fees
 
 Swap fees are distributed pro-rata to all in-range[^1] liquidity at the time of the swap. If the spot price moves out of a position’s range, the given liquidity is no longer active and does not generate any fees. If the spot price reverses and reenters the position’s range, the position’s liquidity becomes active again and will generate fees.

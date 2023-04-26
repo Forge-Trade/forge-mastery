@@ -4,7 +4,9 @@ title: Concentrated Liquidity
 sidebar_position: 1
 ---
 
-## Introduction
+## Introduction to Concentrated Liquidity
+
+<img src="/animations/concentrated-liquidity.webp" class="w-full mt-8"/>
 
 The defining idea of Uniswap v3 is concentrated liquidity: liquidity that is allocated within a custom price range.
 In earlier versions, liquidity was distributed uniformly along the price curve between 0 and infinity.
@@ -14,6 +16,7 @@ The previously uniform distribution allowed trading across the entire price inte
 Consider stablecoin pairs, where the relative price of the two assets stays relatively constant. The liquidity outside the typical price range of a stablecoin pair is rarely touched. For example, the v2 DAI/USDC pair utilizes ~0.50% of the total available capital for trading between $0.99 and $1.01, the price range in which LPs would expect to see the most volume - and consequently earn the most fees.
 
 With v3, liquidity providers may concentrate their capital to smaller price intervals than (0, ∞). In a stablecoin/stablecoin pair, for example, an LP may choose to allocate capital solely to the 0.99 - 1.01 range. As a result, traders are offered deeper liquidity around the mid-price, and LPs earn more trading fees with their capital. We call liquidity concentrated to a finite interval a position. LPs may have many different positions per pool, creating individualized price curves that reflect the preferences of each LP.
+
 
 ## Active Liquidity
 

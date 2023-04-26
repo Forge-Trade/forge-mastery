@@ -1,0 +1,75 @@
+---
+id: capital-efficiency
+title: Maximum Capital Efficiency
+sidebar_position: 2
+---
+
+# Maximum Capital Efficiency with Forge
+
+<img src="/animations/capital-efficiency.webp" class="w-full mt-8"/>
+
+Through concentrated liquidity, LPs can provide the <strong>same liquidity depth as other v2 DEXs</strong> within specified price ranges while <strong>putting far less capital at risk.</strong> The capital saved can be held externally, invested in different assets, deposited elsewhere in DeFi, or used to increase exposure within the specified price range to earn more trading fees.
+
+## A Simple Illustration of the Power of Concentrated Liquidity
+
+The power of concentrated liquidity can be easily understood by simple math and some common sense. Let's take an example scenario:
+
+- <b>Alicia and Bob</b> both want to broaden their horizons and diversify their positions via the IBC ecosystem. 
+- They both decide that they want to provide liquidity in an ETH/USDC pool on an IBC and Cosmos native DEX. 
+- They each have $1 million at their disposal. The bears seem to be weakening and they are both cautiously optimistic.
+- We assume that the price of ETH is 1,500 USDC at the time of this example.
+
+Alicia decides to deploy her capital across the entire price range on Osmosis (or any other DEX using Uniswap v2-like contracts). She deposits 500,000 USDC and 333.33 ETH <b>(worth a total of about $1 million).</b>
+
+Bob, however, is a bit more well-versed in trading and DeFi and is already familiar with the concept of Uniswap v3 and concentrated liquidity. He heads over to Forge and creates a concentrated position, depositing only within the price range from 1,000 to 2,250. He reasons that while he is slightly more optimistic and believes that the price of Ethereum will remain within his range, he does not want to put his entire capital at risk. 
+
+Ultimately, Bob decides to deposits 91,751 USDC and 61.17 ETH, <b>worth a total of about $183,500.</b> He keeps the other $816,500 himself, investing and spending it however he prefers.
+
+---
+
+<b>A year has passed since Alicia and Bob deployed their capital. As Bob predicted, the price of Ethereum stayed within the $1,000 and $2,250 range throughout the entirety of the time. While both  made a pretty impressive profit, Bob came out on top as the clear winner in this example.</b>
+
+Although Alicia invested <b>5.44x more capital</b> than Bob:
+
+- They ended up earning the same amount of profit from fees, but Bob's APR on his position was 314% while Alicia was limited to a 50% return.
+- Bob's position was protected the entire time through his range order, which acted as a stop-loss order.
+- Alicia's entire $1 million position was exposed to risk, including severe impermanent loss (Bob also took some IL risk, but a much smaller amount of his capital was exposed).
+- Bob was able to spend his remaining $816,500 on so much more, i.e. hedging his position, participating in other protocols and pools, buying himself a nice condo, and of course, a small bag of high risk altcoins with much bigger upside potential for the next run.    
+
+<p class="mt-8"><b>So how did Bob end up making the same amount from fees as Alicia?</b></p>
+
+While Alicia's contribution to her liquidity pool was much larger in amount, most of it ended up being worthless in the macro scope as her capital provided liquidity from a price of $0 to infinity. In other words, her capital was deployed in a much more inefficient manner than Bob's. 
+
+<p class="mt-8"><b>What if Bob deployed his full $1 million into his position?</b></p>
+
+Well, he would have obviously turned a much bigger profit, but his risk to reward ratio would have been significantly different. 
+
+Instead of providing equivalent liquidity depth as a v2 LPs with less capital, v3 LPs can choose to provide greater depth with the same amount of capital as their v2 counterparts. <b>However</b> this requires taking on more risk and impermanent loss to the LPs capital. Of course, with more risk comes higher potential fees, while supporting a greater range of trading. It is ultimately up to each individual and their risk profile to decide what approach he or she wants to take. 
+
+## Liquidity in Stable Pools
+
+LPs in more stable pools, such as a stablecoin-to-stablecoin pair, will rarely need to provide liquidity outside of a very narrow range. For this reason, most LPs will provide liquidity at the lowest tier of 0.01%, because of the tick size and the nature of ... *stable*coins. Uniswap v2 and most other DEXs' stablecoin pools are effectively providing liquidity in an infinite range for a pool like USDC/USDT. Inefficiency aside, however, if a stablecoin begins to depeg more than 5% and continues to deviate, then we've got much bigger problems. 
+
+If the bulk of Luna's UST liqudity was on capital efficient DEXs, UST would have stood a much better chance at surviving its depegging death spiral. Not because the liquidity would have been much more concentrated near the peg (though it certainly helps), but because outside a certain range there would have been little to no liquidity left for the massive sell-offs. Interesting case to ponder.
+
+A single pool of $25m held in a UST/USDC pair would have had the liquidity depth equivalent to $5*billion* concentrated between 0.99 — 1.01. If we break it down further, a $25m pool concentrated into the 0.999 - 1.001 range would have provided the same depth as $50*billion.*
+
+Forge is currently capable of capital efficiency gains at 4000x from our non-concentrated counterparts. However, the Uniswap v3 pool factory is technically capable of supporting ranges as granular as 0.02%, translating to a maximum 20,000x capital efficiency gains relative to v2. Now that's efficiency.
+
+## Liquid Staked Evmos as Base Currency
+
+Forge and Evmos is currently in a very unique position as the **first and only** Uniswap v3 DEX that's implemented an LSD of the native chain asset to serve as the base currency for the DEX. You might have wondered why our pools seemed to be so focused on liquid staked assets - it was intended and by design!
+
+### Significance for the Evmos Network
+
+As a layer-1 chain that uses Tendermint and Cosmos SDK, staking is in our blood. And we mean business when it comes to staking - our native staking APR is one of the highest in the Cosmos ecosystem, and will continue to be considered extremely high even after the halvening that is due shortly. There are some problems *as well as opportunities* that arise from our above-average emission rates, and everyone will have different opinions on the right path forward. However, when it comes to liquidity providing and staking, we're pretty certain that much of the network stakeholders, community members, and daily users are struggling to find the right balance of native staking and participating in Evmos DeFi. 
+
+### Capital Efficiency on Steroids 
+
+With Forge, you can don't have to choose between staking rewards and liquidity rewards. When you provide liquidity on Forge with LSDs (stEVMOS, stATOM, etc.), you accrue staking rewards while earning fees and future incentives. The stEVMOS/EVMOS ratio is constantly changing to reflect staking rewards, which means that Forge will be a very attractive hunting ground for arbitrage bots and opportunity seekers. 
+
+This constant changing of the stEVMOS and EVMOS pair ratio will play a crucial role in various ways:
+
+---
+
+[^1]: Tick interval refers to the area of price space between two nearest active ticks

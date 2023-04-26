@@ -16,6 +16,9 @@ With Uniswap V3, one can approximate a limit order by providing a single asset a
 
 Unlike some markets where limit orders may incur fees, the range order maker generates fees while the order is filled. This is due to the range order technically being a form of liquidity provisioning rather than a typical swap.
 
+<img src="/animations/strategies.webp" class="w-full mt-8"/>
+
+
 ## Possibilities of Range orders
 
 The nature of AMM design makes some styles of limit orders possible, while others cannot be replicated. The following are four examples of range orders and their traditional counterparts; the first two are possible, the second two are not.
@@ -47,8 +50,3 @@ The following examples show limit order styles that are unable to be replicated 
 
 ---
 
-## Liquidity Fees
-
-The fees due to your liquidity position will be denominated in both tokens of the given pair. In any of the above examples, after swapping stEVMOS for EVMOS, or EVMOS for stEVMOS, a small amount of both EVMOS and stEVMOS will be due to your account as liquidity provisioning rewards.
-
-Approaches to concentration when setting range orders are up to the user. Selecting a wider range may generate more fees if there is price churn within your range, at the cost of increasing the risk of having your order unfilled if the spot price reverses before completing your full range.

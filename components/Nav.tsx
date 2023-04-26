@@ -32,14 +32,14 @@ return (
       </div>
       <Link href="/" passHref>
       <a className="flex justify-center items-center">
-        <Image alt="ForgeDEX" height={40} src="https://testnet.forge.trade/images/ForgeIcon.png" width={40} />
+        <Image alt="ForgeDEX" height={40} src="https://app.forge.trade/images/ForgeIcon.png" width={40} />
       </a>
       </Link>
       <a className="hidden md:flex ml-3 normal-case text-2xl font-bold mr-1">FORGE<span className="font-medium">MASTERY</span></a>
       <div className="hidden lg:flex divider divider-horizontal"></div>
       <ul className="hidden lg:flex menu menu-horizontal rounded-sm text-sm uppercase">
         <li className="indicator">
-        <span className="indicator-item indicator-start badge badge-primary rounded-full p-1 top-2 left-2 leading-3 text-[0.7rem] z-0">⚡</span> 
+        <span className="indicator-item indicator-start badge badge-primary rounded-full p-1 top-2 left-2 leading-3 text-[0.7rem] z-0 cursor-none hover:animate-pulse">⚡</span> 
           <Link href="/courses/1-basic-training">Bootcamp</Link>
           </li>
         <li><Link href="/resources/tools-resources">Tools & Resources</Link></li>
