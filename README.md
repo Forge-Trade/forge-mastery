@@ -1,4 +1,4 @@
-# Forge Interactive Video Tutorials
+# Documentation and Educational Platform for Forge and Evmos DeFi
 
 ## Stack details
 
