@@ -1,0 +1,78 @@
+@import url("/fonts/stylesheet.css");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main{
+    /* padding: 8rem 12rem; */
+}
+.lessonThumb{
+    margin-top: -20px;
+}
+.lessonThumb img{
+    aspect-ratio: 314 / 178 !important;
+    min-width: 314px;
+    max-width: 314px;
+}
+.btn-header{
+    max-height: 44px !important;
+    padding: 4px 16px;
+    height: 40px;
+    text-align: center;
+    align-self: center;
+}
+.doc-img{
+    margin-top: 40px !important;
+}
+.nx-flex .active > a {
+    background-color: #29292a !important;
+}
+.nextra-code-block > pre {
+    background-color: #29292a !important;
+}
+@media screen and (max-width: 500px) {
+
+    a.playlist-item{
+        display: block;
+    }
+    .lessonThumb img {
+        min-width: -webkit-fill-available;
+        max-width: -webkit-fill-available;
+        margin-bottom: 20px;
+    }
+  }
+
+@media screen and (min-width: 1200px) {
+    .lessonThumb img {
+        min-width: 220px !important;
+        max-width: 220px !important;
+    }
+
+    .course-container{
+        grid-auto-rows: 1fr;
+    }
+    .course-container .playlist {
+        max-height: 100vh;
+        overflow-y: scroll;
+    
+    }
+    div[dir="ltr"] {
+        margin: -1.5rem -2.5rem;
+        background-color: #141413;
+    }
+    .nextra-sidebar-container > div:last-child{
+        display: none;
+    }
+    .nextra-toc > .nextra-scrollbar > div.nx-mt-8 {
+        display: none;
+    }
+    .docsfooter{
+        height: 1px !important;
+        margin-bottom: -2.5rem !important;
+    }
+  }
+  mux-player {
+    /* --controls-backdrop-color: rgb(224 74 50 / 60%); */
+  }

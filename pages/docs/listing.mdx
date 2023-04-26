@@ -1,0 +1,43 @@
+# Project / Token Listing
+
+## Pool Creation
+
+Creating a pool for your project's token is permissionless and does not require any middleman.
+
+## Token Listing
+
+The token list is managed by an open source repository which you can find [here.](https://github.com/Forge-Trade/tokenlist)
+
+### General Requirements
+1. Token should be verified on the [eScan.live](https://escan.live/) or [Mintscan](https://www.mintscan.io/evmos) explorer.
+2. Token must be added to a list that it qualifies for:
+    * **Mainnet Tokenlist**: Token must be on the Evmos network (9001).
+    * **Testnet Tokenlist**: Token must be on the Evmos testnet (9000).
+
+
+## Adding Your Token
+1. Add an entry in the `tokens` field of the appropriate tokenlist. Here is an example using WEVMOS:
+    ```json
+    {
+      "name": "Wrapped Evmos",
+      "symbol": "WEVMOS",
+      "chainId": 9001,
+      "decimals": 18,
+      "address": "0xD4949664cD82660AaE99bEdc034a0deA8A0bd517",
+      "logoURI": "https://storage.googleapis.com/us-central1-dgc-berlin-0-470cbba9-bucket/tokenlist/wevmos.png"
+    }
+    ```
+2. Update the `timestamp` field to the current timestamp.
+3. Update the `version` field to adhere to semantic versioning:
+
+    * Increment major version when tokens are removed
+    * Increment minor version when tokens are added
+    * Increment patch version when tokens already on the list have minor details changed (name, symbol, logo URL, decimals)
+
+    ***Note:*** Changing a token address or chain ID is considered both a remove and an add, and should be a major version update.
+
+4. Create a PR with your project and token information and wait for approval
+
+## Disclaimer
+
+We reserve the right to deny tokens that may cause harm to the Evmos Community. 
