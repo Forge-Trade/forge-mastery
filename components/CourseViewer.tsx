@@ -42,7 +42,7 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
 
   useEffect(() => {
     const lessonIndex = course.lessons.findIndex(lesson => lesson.id === activeLesson.id) + 1
-    router.push(`/courses/${course.id}-${course.slug}/lessons/${lessonIndex}/${activeLesson.slug}`, undefined, { shallow: true })
+    router.push(`/courses/${course.id}-${course.slug}/${lessonIndex}/${activeLesson.slug}`, undefined, { shallow: true })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeLesson, course])
 
