@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-const yoooooletmein = () => {
+const Yoooooletmein = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -12,5 +12,5 @@ const yoooooletmein = () => {
   return null;
 };
 
-export default yoooooletmein;
+export default Yoooooletmein;
 
