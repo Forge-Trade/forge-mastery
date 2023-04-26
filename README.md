@@ -64,3 +64,5 @@ pscale deploy-request deploy your-db 1
 ```
 npx prisma studio
 ```
+
+**Note:** Removed db schema for now; 
