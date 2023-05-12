@@ -76,6 +76,21 @@
         height: 1px !important;
         margin-bottom: -2.5rem !important;
     }
+    .ytvideo {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        margin-bottom:40px;
+      }
+      .botFrame {
+        width: 100%;
+        margin-bottom:20px;
+        scrollbar-width: none;
+        min-height:50vh;
+        background-color: #141413;
+      }
+      .botFrame::-webkit-scrollbar{
+        display: none;
+      }
   }
   mux-player {
     /* --controls-backdrop-color: rgb(224 74 50 / 60%); */
