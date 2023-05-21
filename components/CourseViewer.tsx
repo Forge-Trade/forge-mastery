@@ -160,6 +160,7 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
             alt={`Video thumbnail preview for ${lesson.name}`}
             width={314} height={178} 
             duration={lesson.video.duration || 1}
+            video={false}
           />
         ) : (
           <HoverImage 
@@ -167,7 +168,7 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
             hoverSrc={defaultThumbnail(lesson.lessonType)} 
             alt={`Default thumbnail for ${lesson.name}`}
             width={314} height={178}
-            duration={lesson.video.duration || 1}
+            duration={lesson.video?.duration || 1}
             video
           />
         )}

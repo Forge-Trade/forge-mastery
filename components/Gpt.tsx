@@ -20,7 +20,7 @@ const ChatComponent: FC = () => {
   const chatId = process.env.CHAT_ID;
   const secretKey = process.env.CHAT_SECRET;
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setInputMessage(event.target.value);
   };
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
