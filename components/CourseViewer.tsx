@@ -95,7 +95,7 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
       </div>
     );
   };
-  const defaultThumbnail = (lessonType) => {
+  const defaultThumbnail = (lessonType: string) => {
     switch (lessonType) {
       case 'type1':
         return '/path/to/default/image1.jpg'; // modify this with your actual default image path
