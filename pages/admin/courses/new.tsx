@@ -13,10 +13,11 @@ type CourseCreateResult = {
 
 const AdminNewCourse: NextPage = () => {
   const router = useRouter()
-  const handler = (newCourse: Inputs) => {
-    return fetch('/api/courses', {
+  const handler = async (newCourse: Inputs) => {
+    const res = await fetch('/api/courses', {
       method: 'POST', body: JSON.stringify(newCourse)
-    }).then(res => res.json())
+    });
+    return await res.json();
   }
 
   const mutation = useMutation(handler, {

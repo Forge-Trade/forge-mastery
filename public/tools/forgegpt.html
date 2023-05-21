@@ -1,0 +1,55 @@
+<style>
+    html{
+        background-color: rgb(28, 28, 27);
+    }
+    iframe#gpt{
+        width: 100%;
+        height: 80vh;
+        overflow-y: hidden;
+    }
+    .iframe-wrap{
+          display: relative;
+          overflow-y: clip;
+      }
+      #iframe-overlay { /* Adjust values as needed */
+        height: 25px;
+        width: 100%;
+        background-color: #000;
+        position: relative;
+        top: -25px;
+        left: 5px;
+        overflow-y: hidden;
+
+    }
+    .iframe-wrap iframe{
+        height: 90vh;
+        overflow-y: hidden;
+    }
+</style>
+<div className="iframe-wrap">
+
+    <iframe
+    src="https://www.chatbase.co/chatbot-iframe/4mLrj1VQi3gG3C802e-KW"
+    frameborder="0" id="gpt"
+    ></iframe>
+
+    <div id="iframe-overlay"></div>
+</div>
+
+<script>
+    window.onload = function() {
+   let myiFrame = document.getElementById("gpt");
+   let doc = myiFrame.contentDocument;
+   doc.body.innerHTML = doc.body.innerHTML + '<style>body{ background-color:#000;}</style>';
+}
+</script>
+<script>
+    window.chatbaseConfig = {
+      chatbotId: "4mLrj1VQi3gG3C802e-KW",
+    }
+  </script>
+  <script
+    src="/chat.js"
+    id="4mLrj1VQi3gG3C802e-KW"
+    defer>
+  </script>

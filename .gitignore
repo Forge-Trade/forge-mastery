@@ -27,7 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
+.env
 # vercel
 .vercel
 
@@ -42,3 +42,4 @@ prisma/schema.prisma
 .config/
 .local/state/gh/state.yml
 
+.vscode/settings.json

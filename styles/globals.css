@@ -9,12 +9,13 @@
     /* padding: 8rem 12rem; */
 }
 .lessonThumb{
-    margin-top: -20px;
+    display: flex;
 }
 .lessonThumb img{
     aspect-ratio: 314 / 178 !important;
     min-width: 314px;
     max-width: 314px;
+    
 }
 .btn-header{
     max-height: 44px !important;
@@ -46,12 +47,17 @@
         max-width: -webkit-fill-available;
         margin-bottom: 20px;
     }
+
   }
 
 @media screen and (min-width: 1200px) {
+    .playlist-item {
+        min-height: 120px;
+        align-items: center;
+    }
     .lessonThumb img {
-        min-width: 220px !important;
-        max-width: 220px !important;
+        min-width: 120px !important;
+        max-width: 120px !important;
     }
 
     .course-container{
@@ -75,6 +81,39 @@
     .docsfooter{
         height: 1px !important;
         margin-bottom: -2.5rem !important;
+    }
+    .ytvideo {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        margin-bottom:40px;
+      }
+      .botFrame {
+        width: 100%;
+        margin-bottom:20px;
+        scrollbar-width: none;
+        min-height:50vh;
+        background-color: #141413;
+      }
+      .botFrame::-webkit-scrollbar{
+        display: none;
+      }
+      .iframe-wrap{
+          display: relative;
+          overflow-y: clip;
+      }
+      #iframe-overlay { /* Adjust values as needed */
+        height: 25px;
+        width: 100%;
+        background-color: #000;
+        position: relative;
+        top: -25px;
+        left: 5px;
+        overflow-y: hidden;
+
+    }
+    .iframe-wrap iframe{
+        height: 80vh;
+        overflow-y: hidden;
     }
   }
   mux-player {

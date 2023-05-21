@@ -1,6 +1,6 @@
 {
   "name": "forge-mastery",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "npx prisma generate && next dev",
@@ -37,6 +37,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.35.0",
     "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.8.0",
     "react-markdown": "^8.0.3",
     "react-textarea-autosize": "^8.3.4",
     "remark": "^14.0.2",

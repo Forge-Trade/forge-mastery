@@ -27,6 +27,7 @@ interface Thumbs {
   width: number;
   height: number;
   duration: number;
+  video: boolean;
 }
 
 const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props) => {
@@ -41,8 +42,8 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
   const lessonType = activeLesson?.lessonType
 
   useEffect(() => {
-    const lessonIndex = course.lessons.findIndex(lesson => lesson.id === activeLesson.id) + 1
-    router.push(`/courses/${course.id}-${course.slug}/${lessonIndex}/${activeLesson.slug}`, undefined, { shallow: true })
+    const lessonIndex = course.lessons.findIndex(lesson => lesson.id === activeLesson?.id) + 1
+    router.push(`/courses/${course.id}-${course.slug}/${lessonIndex}/${activeLesson?.slug}`, undefined, { shallow: true })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeLesson, course])
 
@@ -67,7 +68,7 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
       </div>
     );
   }
-  const HoverImage: React.FC<Thumbs> = ({ src, hoverSrc, alt, width, height, duration }) => {
+  const HoverImage: React.FC<Thumbs> = ({ src, hoverSrc, alt, width, height, duration, video }) => {
     const [hover, setHover] = useState(false);
   
     const handleMouseEnter = () => {
@@ -79,9 +80,9 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
     };
 
     return (
-      <div className="lessonThumb">
-        {duration && (
-          <span className='sticky z-10 translate-y-4 translate-x-2 badge bg-[#e14a32] badge-md rounded-md text-base border-none font-medium text-slate-300 py-1 lg:translate-y-[118px]'>{formatDuration(Math.round(duration))}</span>
+      <div className="lessonThumb flex">
+        {!video && (
+          <span className='absolute z-10 translate-y-4 translate-x-2 badge bg-[#e14a32] badge-md rounded-md text-sm border-none font-base text-slate-300 py-1 lg:translate-y-[40px] lg:translate-x-[14px]'>{formatDuration(Math.round(duration))}</span>
         )}
         <Image
           src={hover ? hoverSrc : src}
@@ -93,6 +94,17 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
         />
       </div>
     );
+  };
+  const defaultThumbnail = (lessonType: string) => {
+    switch (lessonType) {
+      case 'type1':
+        return '/path/to/default/image1.jpg'; // modify this with your actual default image path
+      case 'text':
+        return '/images/defaultThumb.png'; // modify this with your actual default image path
+      // add more cases if necessary...
+      default:
+        return '/images/defaultThumb.png'; // modify this with your actual default image path
+    }
   };
   return (
     <div className='course-container mt-8 px-2 grid-cols-1 md:px-10 grid gap-6 xl:grid-cols-[60%_40%] 2xl:grid-cols-[66%_34%]'>
@@ -131,41 +143,45 @@ const CourseViewer = ({ course, lessonProgress = [], setLessonProgress }: Props)
             )}
           </div>
       </div>
-
       <div className='playlist ml-1 mr-1'>
-        {course.lessons.map(lesson => (
-          <a
-            onClick={() => setActiveLesson(lesson)}
-            key={lesson.id}
-            className={clsx({
-              'playlist-item flex gap-5 cursor-pointer hover:bg-[#0d0e0e] px-2 py-4': true,
-              'bg-slate-800': playbackId === lesson.video?.publicPlaybackId
-            })}
-          >
-
-            {lesson.video?.publicPlaybackId && lesson.video.status === "ready" && (
-              
-              <>
-              <HoverImage 
-              src={`https://image.mux.com/${lesson.video.publicPlaybackId}/thumbnail.jpg?width=314&height=178`} 
-              hoverSrc={`https://image.mux.com/${lesson.video.publicPlaybackId}/animated.webp?width=314&height=178`} 
-              alt={`Video thumbnail preview for ${lesson.name}`}
-              width={314} height={178} 
-              duration={lesson.video.duration || 1}
-              />
-                  </>
-            )}
-
-            <div className='overflow-hidden'>
-              <h2>
-                <span className='font-semibold text-lg text-slate-200 lg:text-base'>{lesson.name}</span>
-              </h2>
-              <p className='text-sm text-slate-300 my-1 line-clamp-5 xl:mt-1 xl:line-clamp-4'>{lesson.description}</p>
-            </div>
-          </a>
-        ))}
-      </div>
+    {course.lessons.map(lesson => (
+      <a
+        onClick={() => setActiveLesson(lesson)}
+        key={lesson.id}
+        className={clsx({
+          'playlist-item flex gap-5 self-center cursor-pointer hover:bg-[#0d0e0e] px-2 py-4': true,
+          'bg-slate-800': playbackId === lesson.video?.publicPlaybackId
+        })}
+      >
+        {lesson.video?.publicPlaybackId && lesson.video.status === "ready" && lesson.lessonType === "video" ? (
+          <HoverImage 
+            src={`https://image.mux.com/${lesson.video.publicPlaybackId}/thumbnail.jpg?width=314&height=178`} 
+            hoverSrc={`https://image.mux.com/${lesson.video.publicPlaybackId}/animated.webp?width=314&height=178`} 
+            alt={`Video thumbnail preview for ${lesson.name}`}
+            width={314} height={178} 
+            duration={lesson.video.duration || 1}
+            video={false}
+          />
+        ) : (
+          <HoverImage 
+            src={defaultThumbnail(lesson.lessonType)} 
+            hoverSrc={defaultThumbnail(lesson.lessonType)} 
+            alt={`Default thumbnail for ${lesson.name}`}
+            width={314} height={178}
+            duration={lesson.video?.duration || 1}
+            video
+          />
+        )}
+        <div className='overflow-hidden'>
+          <h2>
+            <span className='font-semibold text-lg text-slate-200 lg:text-base'>{lesson.name}</span>
+          </h2>
+          <p className='text-sm text-slate-300 my-1 line-clamp-4 xl:mt-1 xl:line-clamp-3'>{lesson.description}</p>
+        </div>
+      </a>
+    ))}
     </div>
+</div>
   );
 };
 
