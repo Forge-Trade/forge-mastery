@@ -16,9 +16,8 @@ const ChatComponent: FC = () => {
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const [loading, setLoading] = useState(false);
-
-  const chatId = process.env.CHAT_ID;
-  const secretKey = process.env.CHAT_SECRET;
+  const chatId = process.env.NEXT_PUBLIC_CHAT_ID;
+  const secretKey = process.env.NEXT_PUBLIC_CHAT_SECRET;
 
   const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setInputMessage(event.target.value);
