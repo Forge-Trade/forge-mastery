@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Fdocs\u002Fchat","\u002Fdocs\u002Fcrawl","\u002Fdocs\u002Fcreate-chatbot","\u002Fdocs\u002Fdelete-chatbot","\u002Fdocs\u002Fmain","\u002Fdocs\u002Fupdate-chatbot","\u002Ffeatured-chatbots","\u002Fpricing"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
