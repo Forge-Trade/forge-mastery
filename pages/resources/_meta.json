@@ -1,6 +1,17 @@
 {
   "index": "Forge Introduction",
   "protocol": "The Protocol",
+  "forgegpt": {
+    "title": "Ask ForgeGPT 🔥",
+    "theme": {
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": true,
+      "toc": false,
+      "pagination": false,
+      "layout": "full"
+    }
+  },
   "concepts": "Important Concepts",
   "tokenomics": "Community Owned DEX",
   "partnership-grants": "Partnerships & Grants",
@@ -8,4 +19,6 @@
   "roadmap": "Roadmap",
   "tools-resources": "Tools & Resources",
   "glossary": "Glossary"
+
+  
 }
