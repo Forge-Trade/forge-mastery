@@ -25,6 +25,14 @@ const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: true
   },
+  banner: {
+    key: 'forge-launch',
+    text: (
+      <a href="https://forge.jp.ngrok.io/resources/tokenomics/incentives" target="_blank">
+        🌋 Inferno Incentives Program Go Live May 24th.  Read more →
+      </a>
+    )
+  },
   docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
   primaryHue:{
     dark: 14,

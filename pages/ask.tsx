@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import ChatComponent from '../components/Gpt';
 
-const AskPage: NextPage = () => {
+const AskMinimalPage: NextPage = () => {
   return (
     <div>
       <ChatComponent />
@@ -9,4 +9,4 @@ const AskPage: NextPage = () => {
   );
 };
 
-export default AskPage;
+export default AskMinimalPage;

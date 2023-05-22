@@ -7,6 +7,7 @@ interface Message {
   content: string;
   role: 'user' | 'assistant';
 }
+export const quickqueries = ['What is Forge and why is it unique?', 'What is concentrated liquidity?','Why is capital efficiency so important?','How do I participate in incentivized pools?', 'How can I get my token listed on Forge?']
 
 const ChatComponent: FC = () => {
   const [messages, setMessages] = useState<Message[]>([
@@ -15,11 +16,28 @@ const ChatComponent: FC = () => {
       content: 'The art of mastery takes time and practice. As the Forge Master, I will assist you with any questions you may have regarding Forge and Uniswap v3.\n\nAlways do your own research, and take my responses as a helpful guide - none of it is financial advice.',
     },
   ]);
+  const [strings, setStrings] = useState<string[]>([]);
+  const [error, setError] = useState<string>('');
   const [inputMessage, setInputMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const chatId = process.env.NEXT_PUBLIC_CHAT_ID;
   const secretKey = process.env.NEXT_PUBLIC_CHAT_SECRET;
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/data/frequentlyused.txt');
+        const data = await response.text();
+        const lines = data.split('\n').filter((line: string) => line.trim() !== '');
+        setStrings(lines);
+      } catch (error) {
+        setError('Unable to fetch strings');
+      }
+    };
+
+    fetchData();
+  }, []);
+  
   const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     if (!loading){
       setInputMessage(event.target.value);
@@ -111,7 +129,7 @@ console.log(data)
 
 
     <div className="min-h-[80vh] w-full pt-8 grid grid-cols-8 grid-rows-1 gap-8">
-      <div className="flex flex-col col-span-5 col-5 min-h-[50vh] max-h-[80vh]">
+      <div className="flex flex-col col-span-8 xl:col-span-5 xl:col-5 min-h-[50vh] max-h-[80vh]">
     <div className="navbar min-h-[3rem] rounded-md bg-base-100 text-neutral-content mb-4">
     <div className="flex-1">
 
@@ -132,12 +150,12 @@ Alpha Release - Use with Caution
         <>
         <div
           key={index}
-          className={`messages flex flex-col-reverse ${
-            message.role === 'assistant' ? 'items-start' : 'items-end'
+          className={`chat messages flex flex-col-reverse ${
+            message.role === 'assistant' ? 'chat-start items-start' : 'chat-end items-end'
           }`}
         >
           <div
-            className={`prose flex items-center rounded-xl my-2 px-3 py-2 max-w-[67%] whitespace-pre-wrap`}
+            className={`prose chat-bubble flex items-center rounded-xl my-2 px-3 py-2 max-w-[67%] whitespace-pre-wrap`}
             style={{
               overflowWrap: 'anywhere',
               backgroundColor:
@@ -170,7 +188,7 @@ Alpha Release - Use with Caution
       />
 
       <button className="relative" onClick={() => sendMessage(inputMessage)}>
-      {loading ? (<BsThreeDots className="text-white animate animate-pulse absolute self-center right-2 bottom-1.5 p-1 h-8 w-8"  />) : <IoMdSend className="absolute self-center right-2 bottom-1.5 h-8 w-8 hover:cursor-pointer rounded-md p-1 text-[#d64631] hover:opacity-80" />}
+      {loading ? (<BsThreeDots className="text-[#ee5132]  animate-pulse absolute self-center right-2 bottom-1.5 p-1 h-8 w-8"  />) : <IoMdSend className="absolute self-center right-2 bottom-1.5 h-8 w-8 hover:cursor-pointer rounded-md p-1 text-[#d64631] hover:opacity-80" />}
       </button>
     </div>
     </div>
@@ -200,19 +218,15 @@ Alpha Release - Use with Caution
             </div>
             <h2 className="text-white text-lg title-font font-medium">Quickstart / FAQ</h2>
             </div>
-            <div 
-            onClick={handleButtonClick} key={1} 
-            className="rounded-md mr-1 mt-6 py-2 px-3 text-sm bg-zinc-800 hover:bg-zinc-700 text-white">What is Forge and why is it unique?</div>
-            <div key={2} 
-            className="rounded-md mr-1 mt-1 py-2 px-3 text-sm bg-zinc-800 hover:bg-zinc-700 text-white"
-            onClick={handleButtonClick}>
-              What is concentrated liquidity?</div>
-            <div className="rounded-md mr-1 mt-1 py-2 px-3 text-sm bg-zinc-800 hover:bg-zinc-700 text-white" key={3} onClick={handleButtonClick}>Why is capital efficiency so important?</div>
-            <div onClick={handleButtonClick} key={4} className="rounded-md mr-1 mt-1 py-2 px-3 text-sm bg-zinc-800 hover:bg-zinc-700 text-white">How do I participate in incentivized pools?</div>
-            <div onClick={handleButtonClick} key={5} className="rounded-md mr-1 mt-1 py-2 px-3 text-sm bg-zinc-800 hover:bg-zinc-700 text-white">How can I get my token listed on Forge?</div>
-
-
-
+            {strings.map((str, index) => (
+        <div
+          key={index}
+          className={`rounded-md mr-1 mt-${index === 0 ? 6 : 3} py-2 px-3 text-sm bg-zinc-800 hover:bg-zinc-700 hover:cursor-pointer text-white`}
+          onClick={handleButtonClick}
+        >
+          {str}
+        </div>
+      ))}
           </div>   
 </div>
 </div>
