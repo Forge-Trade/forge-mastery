@@ -163,7 +163,7 @@ Alpha Release - Use with Caution
         rows={1}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        {...loading ? 'disabled' : ''}
+        disabled={loading}
       />
 
       <button className="relative" onClick={() => sendMessage(inputMessage)}>
@@ -181,9 +181,9 @@ Alpha Release - Use with Caution
               <path fillRule="evenodd" d="M12 2.25c-2.429 0-4.817.178-7.152.521C2.87 3.061 1.5 4.795 1.5 6.741v6.018c0 1.946 1.37 3.68 3.348 3.97.877.129 1.761.234 2.652.316V21a.75.75 0 001.28.53l4.184-4.183a.39.39 0 01.266-.112c2.006-.05 3.982-.22 5.922-.506 1.978-.29 3.348-2.023 3.348-3.97V6.741c0-1.947-1.37-3.68-3.348-3.97A49.145 49.145 0 0012 2.25zM8.25 8.625a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zm2.625 1.125a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zm4.875-1.125a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clipRule="evenodd" />
             </svg>
             </div>
-            <h2 className="text-white text-lg title-font font-medium mb-4">About ForgeGPT</h2>
+            <h2 className="text-white text-lg title-font font-medium">About ForgeGPT</h2>
           </div>
-          <div className="flex-grow">
+          <div className="flex-grow mt-4">
             <p className="leading-relaxed text-sm mb-4">ForgeGPT is an experimental tool for users to easily interact with documentation and long-form content. The Evmos DAO Governance has fine-tuned and trained ForgeGPT using GPT-3.5 Turbo as the base model with over 800,000 lines (and growing) of materials relevant to Evmos, Forge, and Uniswap v3.</p>
             <p className="leading-relaxed text-sm">As noted in the disclaimer, this is an early alpha release and users should use caution and always find secondary sources - the tool should be used as a guide and not an instructor. Please report odd behavior or incorrect responses to @LPX55 on Telegram.</p>
             <div className="divider"></div> 
@@ -199,7 +199,7 @@ Alpha Release - Use with Caution
             </div>
             <div 
             onClick={handleButtonClick} key={1} 
-            className="rounded-md mr-1 mt-1 py-2 px-3 text-sm bg-zinc-800 hover:bg-zinc-700 text-white">What is Forge and why is it unique?</div>
+            className="rounded-md mr-1 mt-6 py-2 px-3 text-sm bg-zinc-800 hover:bg-zinc-700 text-white">What is Forge and why is it unique?</div>
             <div key={2} 
             className="rounded-md mr-1 mt-1 py-2 px-3 text-sm bg-zinc-800 hover:bg-zinc-700 text-white"
             onClick={handleButtonClick}>

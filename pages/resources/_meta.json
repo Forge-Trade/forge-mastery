@@ -1,7 +1,7 @@
 {
   "index": "Forge Introduction",
   "protocol": "The Protocol",
-  "forgegpt": {
+  "askforge": {
     "title": "Ask ForgeGPT 🔥",
     "theme": {
       "breadcrumb": false,
