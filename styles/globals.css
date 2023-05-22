@@ -127,6 +127,12 @@
         overflow-anchor: auto;
         height: 1px;
       }
+      .nextra-search{
+          display: none !important;
+      }
+      .prose a {
+        display: contents;
+    }
   }
   mux-player {
     /* --controls-backdrop-color: rgb(224 74 50 / 60%); */

@@ -9,6 +9,7 @@
       "sidebar": true,
       "toc": false,
       "pagination": false,
+      "search": false,
       "layout": "full"
     }
   },
