@@ -1,7 +1,7 @@
 import React, { useState, MouseEvent, KeyboardEvent, ChangeEvent, FC, useEffect, useRef } from 'react';
 import { BsThreeDots } from 'react-icons/bs';
 import { IoMdSend } from 'react-icons/io';
-import Linkify from 'react-linkify';
+import  Linkify  from 'react-linkify';
 
 interface Message {
   content: string;
