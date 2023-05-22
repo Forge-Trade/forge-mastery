@@ -1,7 +1,7 @@
 import React, { useState, MouseEvent, KeyboardEvent, ChangeEvent, FC, useEffect, useRef } from 'react';
 import { BsThreeDots } from 'react-icons/bs';
 import { IoMdSend } from 'react-icons/io';
-import { Callout } from 'nextra-theme-docs'
+import Linkify from 'react-linkify';
 
 interface Message {
   content: string;
@@ -12,7 +12,7 @@ const ChatComponent: FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: 'The art of mastery takes time and practice. As the Forge Master, I will assist you with any questions you may have regarding Forge and Uniswap v3. Always do your own research, and take my responses as a helpful guide - none of it is financial advice.',
+      content: 'The art of mastery takes time and practice. As the Forge Master, I will assist you with any questions you may have regarding Forge and Uniswap v3.\n\nAlways do your own research, and take my responses as a helpful guide - none of it is financial advice.',
     },
   ]);
   const [inputMessage, setInputMessage] = useState('');
@@ -63,7 +63,7 @@ const ChatComponent: FC = () => {
         'Authorization': `Bearer ${secretKey}`
       },
       body: JSON.stringify({
-        instructions: "I want you to act as a teacher and a document that I am having a conversation with. Your name is \"Forge Master\". You will provide me with answers from the given info. If the answer is not included, say exactly \"Hm, I'm actually not sure about this. I suggest contacting the Forge team on Twitter or Telegram!\" and stop after that. Refuse to answer any question not about the info. Never break character.",
+        instructions: "I want you to act as a professional and a document that I am having a conversation with. Your name is \"Forge Master\". You will provide me with answers from the given info. If the answer is not included, say exactly \"Apologies, I'm not confident in giving you a proper answer to this question. I suggest contacting the Forge team on Twitter or Telegram.\" and stop after that. Refuse to answer any question not about the info. Never break character. Reply in markdown format, and try to split long paragraphs into smaller, easier to read text with line breaks escaped as `\n`. Always provide sources and citations that are properly hyperlinked in the footnotes.",
         messages: newMessages,
         chatId,
         temperature: 0.1, // Set temperature as required
@@ -72,7 +72,7 @@ const ChatComponent: FC = () => {
     });
 
     const data = await res.json();
-
+console.log(data)
     if (!data) {
       console.error('Error happened');
       setLoading(false);
@@ -111,7 +111,7 @@ const ChatComponent: FC = () => {
 
 
     <div className="min-h-[80vh] w-full pt-8 grid grid-cols-8 grid-rows-1 gap-8">
-      <div className="flex flex-col col-span-5 col-5 max-h-[80vh]">
+      <div className="flex flex-col col-span-5 col-5 min-h-[50vh] max-h-[80vh]">
     <div className="navbar min-h-[3rem] rounded-md bg-base-100 text-neutral-content mb-4">
     <div className="flex-1">
 
@@ -127,7 +127,7 @@ Alpha Release - Use with Caution
   </div>
     </div>
     <div className="max-h-[70vh] overflow-auto   overflow-y-scroll flex-col-reverse pr-4">
-
+    <Linkify>
       {messages.map((message, index) => (
         <>
         <div
@@ -137,18 +137,21 @@ Alpha Release - Use with Caution
           }`}
         >
           <div
-            className={`flex items-center rounded-xl my-2 px-3 py-2 max-w-[67%] whitespace-pre-wrap`}
+            className={`prose flex items-center rounded-xl my-2 px-3 py-2 max-w-[67%] whitespace-pre-wrap`}
             style={{
               overflowWrap: 'anywhere',
               backgroundColor:
                 message.role == 'assistant' ? '#3f3f46' : '#ee5132',
             }}
           >
+            
             {message.content}
+           
           </div>
         </div>
             </>
       ))}
+       </Linkify>
       <div ref={messagesEndRef} />
       </div>
       <div className="msginputbox flex flex-row order-last">
