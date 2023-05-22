@@ -1,11 +1,11 @@
 {
   "index": "Forge Introduction",
   "protocol": "The Protocol",
-  "forgegpt": {
+  "askforge": {
     "title": "Ask ForgeGPT 🔥",
     "theme": {
       "breadcrumb": false,
-      "footer": true,
+      "footer": false,
       "sidebar": true,
       "toc": false,
       "pagination": false,

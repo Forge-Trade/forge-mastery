@@ -115,6 +115,18 @@
         height: 80vh;
         overflow-y: hidden;
     }
+    .msginputbox{
+        scroll-snap-align: end;
+
+    }
+    .messages > * {
+        overflow-anchor: none;
+      }
+      
+      .anchor {
+        overflow-anchor: auto;
+        height: 1px;
+      }
   }
   mux-player {
     /* --controls-backdrop-color: rgb(224 74 50 / 60%); */
