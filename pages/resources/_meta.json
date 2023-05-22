@@ -5,7 +5,7 @@
     "title": "Ask ForgeGPT 🔥",
     "theme": {
       "breadcrumb": false,
-      "footer": true,
+      "footer": false,
       "sidebar": true,
       "toc": false,
       "pagination": false,
