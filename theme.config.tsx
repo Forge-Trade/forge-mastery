@@ -28,8 +28,8 @@ const config: DocsThemeConfig = {
   banner: {
     key: 'forge-launch',
     text: (
-      <a href="https://forge.jp.ngrok.io/resources/tokenomics/incentives" target="_blank">
-        🌋 Inferno Incentives Program Go Live May 24th.  Read more →
+      <a href="/resources/launch" target="_blank">
+        🌋 Inferno Incentives Program Are Live!  Read more →
       </a>
     )
   },

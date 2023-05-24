@@ -38,13 +38,14 @@ return (
       <a className="hidden md:flex ml-3 normal-case text-2xl font-bold mr-1">FORGE<span className="font-medium">MASTERY</span></a>
       <div className="hidden lg:flex divider divider-horizontal"></div>
       <ul className="hidden lg:flex menu menu-horizontal rounded-sm text-sm uppercase">
+      <li><Link href="/resources">🤝 Intro</Link></li>
+
         <li className="indicator">
-        <span className="indicator-item indicator-start badge badge-primary bg-[#e04a32] rounded-full p-1 top-2 left-2 leading-3 text-[0.7rem] z-0 cursor-none hover:animate-pulse">🔥</span> 
-          <Link href="/courses/1-basic-training">Bootcamp</Link>
+       
+          <Link href="/courses/1-basic-training">🔥 Bootcamp</Link>
           </li>
-        <li><Link href="/resources/tools-resources">Tools & Resources</Link></li>
-        <li><Link href="/resources/partnership-grants">Partnerships & Grants</Link></li>
-        <li><Link href="/resources/listing">Project Listing</Link></li>
+        <li><Link href="/resources/quickstart/askforge">🧙‍♂️ Ask Forge</Link></li>
+        <li><Link href="/resources/partnership-grants">🔨 Developer Resources</Link></li>
       </ul>
     </div>
 

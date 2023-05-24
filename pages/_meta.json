@@ -3,6 +3,10 @@
         "title": "Documentation",
         "type": "page",
         "display": "hidden"
+      },
+      "training": {
+        "type": "page",
+        "display": "hidden"
       }
 }
   

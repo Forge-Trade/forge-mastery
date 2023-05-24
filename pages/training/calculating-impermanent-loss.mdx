@@ -1,0 +1,19 @@
+## **Calculating Impermanent Loss**
+
+Impermanent loss can be calculated using the following formula:
+
+
+    _Impermanent Loss = (2 * sqrt(price ratio)) / (1 + price ratio) - 1_
+
+Where the price ratio is the change in price of Token B relative to Token A.
+
+Let's consider a simple example:
+
+Suppose you provide liquidity to an ETH/USDC pool in Forge. At the time of deposit, 1 ETH is worth 2000 USDC. Later, the price of ETH increased to 2500 USDC. The price ratio is 2500/2000 = **1.25**.
+
+Plugging this into the formula:
+
+
+    _Impermanent Loss = (2 * sqrt(1.25)) / (1 + 1.25) - 1 = 0.020 or 2.0%_
+
+In this case, the impermanent loss would be **2.0%**. If you withdraw your liquidity at this point, this will become a permanent loss.

@@ -1,8 +1,7 @@
 {
   "index": "Forge Introduction",
-  "protocol": "The Protocol",
-  "askforge": {
-    "title": "Ask ForgeGPT 🔥",
+  "quickstart": {
+    "title": "Quickstart",
     "theme": {
       "breadcrumb": false,
       "footer": false,
@@ -18,7 +17,11 @@
   "listing": "Project Listing",
   "roadmap": "Roadmap",
   "tools-resources": "Tools & Resources",
-  "glossary": "Glossary"
+  "glossary": "Glossary",
+  "launch": {
+    "display": "hidden"
+  }
 
   
 }
+
