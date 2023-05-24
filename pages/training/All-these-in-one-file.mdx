@@ -1,0 +1,223 @@
+# **Grants**
+
+Several avenues are available to obtain Evmos development grants.
+
+
+## **Community Pool Funding**
+
+Anyone can request funding from the Community Pool to support their project. Follow the framework laid out here,[ https://docs.evmos.community/governance/proposals/templates](https://docs.evmos.community/governance/proposals/templates)
+
+The Evmos DAO is always ready to assist in the proposal process. Reach out at[ https://twitter.com/evmosdao](https://twitter.com/evmosdao)
+
+
+## **Encode Grants Program**
+
+Applications for Round 2 are open until June 4th. Visit the following site to review all open grant tracks and the guidelines for applying.[ https://encodeclub.notion.site/Encode-x-Evmos-Grant-Tracks-Round-2-70c9282f349a41fd88c9556eeb44dc08](https://encodeclub.notion.site/Encode-x-Evmos-Grant-Tracks-Round-2-70c9282f349a41fd88c9556eeb44dc08)
+
+
+## **Hackathons**
+
+DoraHacks EVM Extension Hackathon with the submission deadline being May 26th. Visit the following site to view all tracks, prizes, entry requirements, and developer resources[ https://dorahacks.io/hackathon/EVM/detail](https://dorahacks.io/hackathon/EVM/detail)
+
+**—**
+
+
+# **Resources**
+
+
+## **How it works in theory:**
+
+
+
+* **[Whiteboard Crypto - Uniswap V3 Explained - Concentrated Liquidity, NFT LP Tokens, Licensing…](https://www.youtube.com/watch?v=ClWR1570UQw)**
+* **[Finematics - UNISWAP V3 - New Era Of AMMs? Architecture Explained](https://www.youtube.com/watch?v=Ehm-OYBmlPM)**
+* **[6 Ways to Avoid Impermanent Loss](https://www.youtube.com/watch?v=oyriORaeJOw)**
+
+
+## **How to use in practice:**
+
+
+
+* **[Concentrated Liquidity Seminar with TheCalculatorGuy](https://www.youtube.com/watch?v=t1Za8s2o7S0)**
+
+
+# **How to Swap Tokens on Forge**
+
+Step 1: **Connect Your Wallet**. Go to https://forge.trade. Click on "Connect" in the top right corner. You can connect using MetaMask, Coinbase Wallet, and WalletConnect (for wallets like Trust Wallet).
+
+Step 2: **Select Tokens**. Once your wallet is connected, choose the token you wish to swap from and the token you want to receive. If the token isn't listed, you can add a custom token by pasting the contract address into the search field.
+
+Step 3: **Enter Amount.** Enter the amount of the token you want to swap. The Forge interface will automatically calculate the amount of the other token you'll receive based on the current exchange rate.
+
+Step 4: **Adjust Slippage Tolerance.** Slippage tolerance accounts for changes in price between when you start a transaction and when it gets confirmed on the blockchain. You can adjust this in the settings. Be aware that a higher slippage tolerance increases the likelihood of your transaction getting through but may result in a less favorable rate.
+
+Step 5: **Confirm Swap.** Click on "Swap" and then "Confirm Swap." A MetaMask (or other wallet) window will pop up, asking you to confirm the transaction.
+
+Step 6: **Confirm Transaction.** Confirm the transaction in your wallet. Once confirmed, your swap will be executed.
+
+—
+
+
+# **How to Add Liquidity**
+
+Step 1: **Connect Your Wallet.** Go to https://forge.trade and click on "Add Liquidity" at the top of the page, then click "New Position." Connect your wallet if you haven't already.
+
+Step 2: **Select Tokens.** Choose the tokens you want to provide liquidity for. You need to select two tokens for a liquidity pair.
+
+Step 3: **Set Price Range.** Unlike Uniswap V2, you can set a price range for your liquidity in Forge. The tokens you provide will only be used for trades within this price range.
+
+Step 4: **Enter Amount.** Decide how much of each token you want to deposit. Remember, you need to add an equal value of both tokens.
+
+Step 5: **Review and Add Liquidity.** Review your position; if everything looks good, click "Preview" to further confirm details. Click "Add" to provide your tokens to the liquidity pool.
+
+—
+
+
+# **How to Remove Liquidity**
+
+Step 1: **Connect Your Wallet.** Go to https://forge.trade and click on "Add Liquidity" at the top of the page. Connect your wallet if you haven't already.
+
+Step 2: **Find Your Position.** Under "Your Positions," you'll see a list of all the liquidity you've provided. Next, find the position you want to remove liquidity from and click on that pair.
+
+Step 3: **Remove Liquidity.** Click on the "Remove Liquidity" button on the right side of the page. You can choose to remove a certain percentage or all of your liquidity. Once you've decided on the amount, then click "Remove."
+
+Step 4: **Confirm Removal.** Click "Remove" and confirm the transaction in your wallet. Your liquidity will be removed, and the tokens returned to your wallet once the transaction finalizes. 
+
+Removing liquidity may be appropriate when you believe that the price of the tokens in your pool is likely to move outside of your specified range or when you want to realize the fees you've earned. Keep in mind that removing liquidity may have tax implications.
+
+—
+
+
+# **Understanding and Managing Liquidity Positions**
+
+With Forge, all price ranges do not have an even liquidity distribution. Instead, liquidity providers can set custom price ranges for their liquidity, called "concentrated liquidity." This feature allows liquidity providers to serve a range of prices they believe are most relevant, improving capital efficiency.
+
+You can go to the “Add Liquidity" section of the Forge interface to manage your liquidity positions. Here, you can see your current liquidity positions, including the tokens you've deposited, the price range, your pool share, and the fees you've earned.
+
+Remember, when you provide liquidity, you are taking on risk. If the price of the tokens in your pool changes significantly, you may experience impermanent loss, where you would have been better off simply holding your tokens rather than providing liquidity. Understanding and regularly monitoring your positions and the overall market conditions is essential.
+
+
+# **Understanding Fees and Price Impact**
+
+Forge has a flexible fee system, where liquidity providers can choose from three different fee tiers per pair – 0.05%, 0.30%, and 1.00%. The selected fee tier impacts potential returns and risks for liquidity providers. The higher the volatility expected for a pair, the higher the fee tier a liquidity provider might want to choose to compensate for the potential impermanent loss.
+
+Each swap on Forge incurs a fee proportional to the amount of the trade and the chosen fee tier. These fees are added to the respective liquidity pool and can be claimed by liquidity providers when they withdraw their liquidity.
+
+Price impact refers to the change in price caused by a trade. On Forge, price impact is usually higher for larger trades and pools with less liquidity. Users can see an estimate of the price impact of their trade before they execute a swap. Reviewing this and adjusting trade size or waiting for more favorable market conditions if the price impact is too high is essential.
+
+
+# **Understanding Impermanent Loss **
+
+Impermanent loss (IL) occurs when the price ratio of the tokens in a pair changes significantly from the time of providing liquidity. The loss is "impermanent" because it can be mitigated if the prices return to the original ratio. However, the loss becomes permanent if an LP withdraws its liquidity while the price is still different.
+
+This phenomenon occurs because AMMs always maintain a constant product of the quantities of the two tokens in the pool. When the price of one token increases, traders will buy it from the pool, decreasing its amount and increasing the amount of the other token until the product of the quantities returns to constant. As an LP, if you had held onto your tokens instead of providing liquidity, you could have benefited more from the price increase.
+
+ LPs should understand this concept and employ strategies to manage IL.
+
+
+## **Calculating Impermanent Loss**
+
+Impermanent loss can be calculated using the following formula:
+
+
+    _Impermanent Loss = (2 * sqrt(price ratio)) / (1 + price ratio) - 1_
+
+Where the price ratio is the change in price of Token B relative to Token A.
+
+Let's consider a simple example:
+
+Suppose you provide liquidity to an ETH/USDC pool in Forge. At the time of deposit, 1 ETH is worth 2000 USDC. Later, the price of ETH increased to 2500 USDC. The price ratio is 2500/2000 = **1.25**.
+
+Plugging this into the formula:
+
+
+    _Impermanent Loss = (2 * sqrt(1.25)) / (1 + 1.25) - 1 = 0.020 or 2.0%_
+
+In this case, the impermanent loss would be **2.0%**. If you withdraw your liquidity at this point, this will become a permanent loss.
+
+
+## **Mitigating Impermanent Loss**
+
+Here are some strategies to reduce impermanent loss:
+
+
+
+1. **Choose Stable Pairs**: Providing liquidity to pairs that include stablecoins or tokens with less price volatility can mitigate impermanent loss, as their prices are less likely to diverge significantly.
+2. **Long-Term Perspective**: If you believe in the long-term appreciation of both tokens in a pair, the impermanent loss might be offset over time by the value increase of the tokens and the trading fees earned.
+3. **Concentrated Liquidity Provision**: Forge allows you to provide liquidity within specific price ranges. If you set a narrow range around the current price, you could potentially earn more fees and reduce impermanent loss. However, this strategy requires more active management and understanding of market conditions.
+
+Remember, while these strategies can help mitigate impermanent loss, they cannot completely eliminate the risk. Always conduct your own research and risk assessment before becoming a liquidity provider.
+
+
+# **Risk Management**
+
+LPs should always research and understand the risks involved in providing liquidity. Diversifying across different pairs, regularly monitoring positions, and investing only what one can afford to lose are crucial to risk management.
+
+Remember, advanced strategies involve more risk and should only be used by users who fully understand them and are willing to take on the associated risks. Always do your own research and consider seeking advice from financial advisors.
+
+—
+
+
+# **Advanced Strategies**
+
+Forge offers Concentrated Liquidity, allowing Liquidity Providers (LPs) to allocate their capital within custom price ranges. Concentrated Liquidity opens up a range of new strategies for LPs. Here are some advanced strategies for maximizing returns and minimizing risks:
+
+
+
+1. **Focused Liquidity Provision**: LPs can focus their liquidity within a specific price range in Forge. This is a significant advantage over Uniswap V2, where liquidity is distributed evenly across all prices.
+
+    By focusing liquidity within a narrow price range close to the current price, LPs can provide the same depth of liquidity (or trading volume) with less capital, thereby increasing capital efficiency and potential returns from fees.
+
+
+    For instance, if an LP believes that the price of ETH/USDC will stay between $1700 and $2000, they can decide to provide liquidity only within this range. The narrower this range, the more fees they would earn per dollar of capital, assuming the price stays within this range.
+
+
+    However, this strategy comes with increased risk. If the price moves outside of the specified range, LPs will no longer earn fees, and their position will be fully converted into either ETH or USDC, depending on the direction of the price movement. This can result in significant impermanent loss if the price never returns to the specified range.
+
+2. **Multi-Position Strategies**: Forge allows LPs to provide liquidity in multiple price ranges, which can help create a more customized risk-return profile.
+
+    For example, an LP could divide their capital into different portions and allocate each to a different price range. They could put a small amount of capital in a narrow range close to the current price for high returns and a larger amount in a broader range for more stability. This strategy allows the LP to earn high fees when the price is volatile within the narrow range and still earn some fees and avoid a complete conversion to one token when the price moves outside the narrow range.
+
+
+    This approach can be particularly beneficial in volatile markets, allowing LPs to maximize returns while mitigating risks.
+
+3. **Dynamic Liquidity Provision**: Given the flexibility of Forge, LPs have the opportunity to adjust their price ranges based on market conditions actively.
+
+    For example, if an LP anticipates a significant upward price movement for ETH/USDC, they could move their liquidity to a higher price range. This would allow them to continue earning fees as the price increases, capture the price appreciation of ETH, and mitigate impermanent loss. However, this strategy requires active management and a good understanding of market conditions.
+
+
+    Remember, while these strategies can help maximize returns and minimize risks, they involve more complexity and potential risks. LPs should carefully consider these factors and thoroughly research before deciding on a strategy.
+
+
+
+## **Concentrated Liquidity in Comparison to Limit Orders**
+
+Forge's concentrated liquidity provision allows liquidity providers (LPs) to set custom price ranges within which their liquidity is active. This feature can simulate the functionality of limit orders in traditional finance, albeit with a few key differences.
+
+In a traditional limit order, a trader sets the specific price at which they want to buy or sell an asset. Once the market price hits that specific price, the order is executed.
+
+In Forge, when an LP sets a price range for their liquidity, they state that they are willing to buy or sell tokens at any price within that range. When the market price moves into their range, their liquidity is used for trades, earning them fees.
+
+Now, if the market price moves beyond their range in one direction, their liquidity is no longer used for trades until the price comes back into their range. Furthermore, as the price moves beyond their range, their liquidity position will gradually convert into the token depreciating in price.
+
+For example, let's say you're providing liquidity to an ETH/USDC pool, and you set your price range such that you provide liquidity when 1 ETH is between 1700 USDC and 2000 USDC. If the price of ETH rises above 2000 USDC, your liquidity pool share will gradually convert into 100% USDC (as traders are swapping USDC for ETH, driving the price up). In this scenario, you've essentially sold your ETH at prices between 1700 and 2000 USDC, similar to a limit sell order in traditional finance.
+
+Conversely, if the price of ETH falls below 1700 USDC, your liquidity pool share will gradually convert into 100% ETH (as traders are swapping ETH for USDC, driving the price down). Here, you've essentially bought ETH at prices between 1700 and 2000 USDC, similar to a limit buy order.
+
+This mechanism allows LPs to automate their buying and selling based on their price expectations, much like limit orders. However, it's important to note that if the price never returns to their range, their position will remain 100% in the token that depreciated in price, which could lead to impermanent loss if the price of that token continues to fall. Also, unlike limit orders, LPs earn fees for trades that occur within their price range, providing an additional incentive.
+
+—
+
+
+# **Troubleshooting Common Issues**
+
+Here are some common issues you might encounter while using Forge and how to troubleshoot them:
+
+
+
+* **Transaction Failed**: This can happen due to insufficient gas fees, price movement (slippage), or network congestion. Try increasing the gas fee, adjusting the slippage tolerance, or waiting for the network to be less congested.
+* **Insufficient Output Amount Error**: This occurs when the price changes between the time of transaction approval and execution. Increasing your slippage tolerance can solve this issue.
+* **Wallet Connection Issues**: If you're having trouble connecting your wallet, try refreshing the page, switching browsers, or clearing your browser cache.
+* **Liquidity Position Not Showing**: If your liquidity position isn't showing, it could be a network error. Check your transactions on https://escan.live to ensure they were successful, and try refreshing the page.
+
+Remember that using DeFi platforms involves risks. Always double-check transactions, be wary of high slippage settings, and never invest more than you can afford to lose.
